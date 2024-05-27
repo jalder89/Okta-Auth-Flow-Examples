@@ -1,5 +1,6 @@
 require("dotenv").config();
 const menu = require("./cli/menus.js");
+const auth = require("./api/authentication.js");
 
 
 async function main() {
@@ -9,7 +10,8 @@ async function main() {
       switch (choice) {
         // Display Auth Server Menu
         case "login-flow":
-          choice = await menu.loginFlow();
+          const credentials = await menu.getLogin();
+          const tokens = await auth.login(credentials);
           break;
 
         // Exit the CLI

@@ -19,7 +19,7 @@ async function mainMenu() {
   return answer;
 }
 
-async function loginFlow() {
+async function getLogin() {
     const username = await inquirer.input({
         message: "Enter your Okta Username",
     });
@@ -35,5 +35,5 @@ async function loginFlow() {
 
 module.exports = {
     mainMenu,
-    loginFlow,
+    getLogin,
 }
