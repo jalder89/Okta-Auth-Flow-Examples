@@ -27,6 +27,8 @@ app.get("/authorization-code/callback", async (req, res) => {
     },
   })
   .then(async (response) => {
+    console.log(`Response from /Token:`);
+    console.log(response)
     return response;
   })
   .catch((error) => {

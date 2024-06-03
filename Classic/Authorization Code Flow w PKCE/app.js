@@ -37,6 +37,8 @@ app.get("/login/callback", async (req, res) => {
     },
   })
     .then(async (response) => {
+      console.log("Token Response:");
+      console.log(response);
       return response;
     })
     .catch((error) => {
